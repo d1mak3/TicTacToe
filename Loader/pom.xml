@@ -21,6 +21,14 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.tttclient.gui</groupId>
+            <artifactId>gui</artifactId>
+            <version>0.0</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>${project.name}</finalName>
         <plugins>
