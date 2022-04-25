@@ -1,0 +1,5 @@
+com\tttclient\gamelogic\GameWithHuman.class
+com\tttclient\gamelogic\GameWithBot.class
+com\tttclient\gamelogic\IGame.class
+com\tttclient\gamelogic\GameWithHumanOffline.class
+com\tttclient\gamelogic\GameWithEasyBot.class

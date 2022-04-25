@@ -1,0 +1,5 @@
+com\tttclient\drawing\Model.class
+com\tttclient\drawing\models\Zeroes.class
+com\tttclient\drawing\Field.class
+com\tttclient\drawing\IModel.class
+com\tttclient\drawing\models\Cross.class
