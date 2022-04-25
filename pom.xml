@@ -16,8 +16,8 @@
     </properties>
 
     <modules>
-        <module>loader</module>
-        <module>gui</module>
+        <module>Loader</module>
+        <module>Gui</module>
         <module>GameLogic</module>
         <module>Drawing</module>
         <module>Data</module>
