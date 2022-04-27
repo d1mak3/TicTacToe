@@ -3,5 +3,7 @@ package com.tttclient.drawing;
 import java.awt.*;
 
 public interface IModel {
-    void Draw(Graphics g);
+    void draw(Graphics g);
+    public void setHeightOfCell(int newHeightOfCell);
+    public void setWidthOfCell(int newWidthOfCell);
 }

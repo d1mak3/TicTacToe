@@ -1,35 +1,29 @@
 package com.tttclient.gamelogic;
 
 public abstract class Game implements IGame {
-    Model[][] field = null;
+    LogicModel[][] field;
     boolean turnOfCrosses = false;
     int countOfModelsInARowRequiredForWin;
 
     public Game(int fieldSize) {
-        field = new Model[fieldSize][fieldSize];
+        field = new LogicModel[fieldSize][fieldSize];
 
         // Fill the field with NULLs
         for (int i = 0; i < fieldSize; ++i) {
             for (int j = 0; j < fieldSize; ++j) {
-                field[i][j] = Model.NULL;
+                field[i][j] = LogicModel.NULL;
             }
         }
     }
 
     @Override
     public void place(int x, int y) {
-        if (turnOfCrosses) {
-            field[x][y] = Model.CROSS;
-        }
-        else {
-            field[x][y] = Model.ZERO;
-        }
-        turnOfCrosses = !turnOfCrosses;
+        placeModel(x, y);
     }
 
     @Override
     public Winner checkWin() {
-        Winner winner = Winner.GAME_IS_NOT_OVER;
+        Winner winner = Winner.NOBODY;
 
         for (int i = 0; i < field[0].length; ++i) {
             for (int j = 0; j < field[0].length; ++j) {
@@ -55,17 +49,32 @@ public abstract class Game implements IGame {
         countOfModelsInARowRequiredForWin = countOfModelsInARow;
     }
 
+    @Override
+    public LogicModel[][] getField() {
+        return field;
+    }
+
+    protected void placeModel(int x, int y) {
+        if (turnOfCrosses) {
+            field[x][y] = LogicModel.CROSS;
+        }
+        else {
+            field[x][y] = LogicModel.ZERO;
+        }
+        turnOfCrosses = !turnOfCrosses;
+    }
+
     private boolean checkStraightDiagonalWin(int x, int y) {
         if (x + countOfModelsInARowRequiredForWin > field[0].length || y + countOfModelsInARowRequiredForWin > field[0].length) {
             return false;
         }
 
-        Model currentModel;
+        LogicModel currentModel;
         if (turnOfCrosses) {
-            currentModel = Model.CROSS;
+            currentModel = LogicModel.CROSS;
         }
         else {
-            currentModel = Model.ZERO;
+            currentModel = LogicModel.ZERO;
         }
 
         for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
@@ -86,12 +95,12 @@ public abstract class Game implements IGame {
             return false;
         }
 
-        Model currentModel;
+        LogicModel currentModel;
         if (turnOfCrosses) {
-            currentModel = Model.CROSS;
+            currentModel = LogicModel.CROSS;
         }
         else {
-            currentModel = Model.ZERO;
+            currentModel = LogicModel.ZERO;
         }
 
         for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
@@ -112,12 +121,12 @@ public abstract class Game implements IGame {
             return false;
         }
 
-        Model currentModel;
+        LogicModel currentModel;
         if (turnOfCrosses) {
-            currentModel = Model.CROSS;
+            currentModel = LogicModel.CROSS;
         }
         else {
-            currentModel = Model.ZERO;
+            currentModel = LogicModel.ZERO;
         }
 
         for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
@@ -137,12 +146,12 @@ public abstract class Game implements IGame {
             return false;
         }
 
-        Model currentModel;
+        LogicModel currentModel;
         if (turnOfCrosses) {
-            currentModel = Model.CROSS;
+            currentModel = LogicModel.CROSS;
         }
         else {
-            currentModel = Model.ZERO;
+            currentModel = LogicModel.ZERO;
         }
 
         for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
