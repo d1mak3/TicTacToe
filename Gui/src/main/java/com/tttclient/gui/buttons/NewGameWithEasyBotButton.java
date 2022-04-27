@@ -1,6 +1,7 @@
 package com.tttclient.gui.buttons;
 
 import com.tttclient.gui.GameController;
+import com.tttclient.gui.GameField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,8 +17,7 @@ public class NewGameWithEasyBotButton extends Button {
         button.setFont(new Font("Arial", Font.PLAIN, 75));
 
         button.addActionListener(listener -> {
-            GameController newGameController = new GameController();
-            newGameController.startGameWithEasyBot();
+            //GameField field = new GameField(3, )
         });
     }
 }

@@ -4,26 +4,25 @@ import com.tttclient.gui.buttons.NewGameButton;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-    JFrame menuFrame = new JFrame("TicTacToe");
+    static JFrame menuFrame;
 
     public static void clearFrame(Container container) {
-        // Clear the window
+        // Clear the container
         container.removeAll();
         container.revalidate();
         container.repaint();
     }
 
-    public Menu() {
-        configureMenu();
+    public static JFrame getMenuFrame() {
+        return menuFrame;
     }
 
-    private void configureMenu() {
+    public static void configureMenu() {
+        menuFrame = new JFrame("TicTacToe");
         JPanel grid = new JPanel();
         List<IButton> buttons = new ArrayList<>();
 
@@ -39,7 +38,7 @@ public class Menu {
         }
 
         menuFrame.add(grid);
-        menuFrame.setSize(1280, 600);
+        menuFrame.setSize(1200, 600);
         menuFrame.setVisible(true);
     }
 }
