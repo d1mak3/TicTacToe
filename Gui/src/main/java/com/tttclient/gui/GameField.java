@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.tttclient.gui;
 
 import com.tttclient.drawing.models.Cross;
@@ -68,4 +69,7 @@ public class GameField extends JFrame {
     private void configure() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
+=======
+package com.tttclient.gui;public class GameField {
+>>>>>>> drawing
 }

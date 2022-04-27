@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.tttclient.gui;
 
 import com.tttclient.drawing.IModel;
@@ -19,4 +20,7 @@ public class CellForModel extends JPanel {
         model.setWidthOfCell(getWidth());
         model.draw(g);
     }
+=======
+package com.tttclient.gui;public class CellForModel {
+>>>>>>> drawing
 }

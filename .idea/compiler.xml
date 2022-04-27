@@ -13,5 +13,8 @@
         <module name="loader" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="GameAPI" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
