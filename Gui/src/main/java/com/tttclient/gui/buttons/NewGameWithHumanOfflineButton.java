@@ -1,13 +1,14 @@
 package com.tttclient.gui.buttons;
 
+import com.tttclient.gamelogic.games.GameWithHuman;
 import com.tttclient.gui.GameController;
+import com.tttclient.gui.GameField;
+import com.tttclient.gui.Menu;
 
 import javax.swing.JButton;
 
 import java.awt.Container;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class NewGameWithHumanOfflineButton extends Button {
     public NewGameWithHumanOfflineButton(Container newParent) {
@@ -20,8 +21,11 @@ public class NewGameWithHumanOfflineButton extends Button {
         button.setFont(new Font("Arial", Font.PLAIN, 75));
 
         button.addActionListener(listener -> {
-            GameController newGameController = new GameController();
-            newGameController.startGameWithHumanOffline();
+            GameField field = new GameField(3,
+                    new GameController(new GameWithHuman(3)));
+            field.setVisible(true);
+            field.setSize(1200, 600);
+            Menu.getMenuFrame().setVisible(false);
         });
     }
 }
