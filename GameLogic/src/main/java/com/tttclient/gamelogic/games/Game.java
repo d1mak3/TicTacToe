@@ -32,10 +32,10 @@ public abstract class Game implements IGame {
 
         for (int i = 0; i < field[0].length; ++i) {
             for (int j = 0; j < field[0].length; ++j) {
-                if (checkReverseDiagonalWin(i, j) ||
-                    checkStraightDiagonalWin(i, j) ||
-                    checkHorizontalWin(i, j) ||
-                    checkVerticalWin(i, j)) {
+                boolean resultRDW = checkReverseDiagonalWin(j, i), resultSDW = checkStraightDiagonalWin(j, i),
+                resultHW = checkHorizontalWin(j, i), resultVW = checkVerticalWin(j, i);
+
+                if (resultHW || resultRDW || resultVW || resultSDW) {
                     if (turnOfCrosses) {
                         winner = Winner.CROSS;
                     }
@@ -82,7 +82,7 @@ public abstract class Game implements IGame {
             currentModel = LogicModel.ZERO;
         }
 
-        for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
+        for (int i = 0; i < countOfModelsInARowRequiredForWin; ++i) {
             if (field[x][y] != currentModel) {
                 return false;
             }
@@ -96,7 +96,7 @@ public abstract class Game implements IGame {
     }
 
     private boolean checkReverseDiagonalWin(int x, int y) {
-        if (x - countOfModelsInARowRequiredForWin < 0 || y + countOfModelsInARowRequiredForWin > field[0].length) {
+        if (x - countOfModelsInARowRequiredForWin + 1 < 0 || y + countOfModelsInARowRequiredForWin > field[0].length) {
             return false;
         }
 
@@ -108,7 +108,7 @@ public abstract class Game implements IGame {
             currentModel = LogicModel.ZERO;
         }
 
-        for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
+        for (int i = 0; i < countOfModelsInARowRequiredForWin; ++i) {
             if (field[x][y] != currentModel) {
                 return false;
             }
@@ -121,7 +121,7 @@ public abstract class Game implements IGame {
         return true;
     }
 
-    private boolean checkHorizontalWin(int x, int y) {
+    private boolean checkVerticalWin(int x, int y) {
         if (x + countOfModelsInARowRequiredForWin > field[0].length) {
             return false;
         }
@@ -134,7 +134,7 @@ public abstract class Game implements IGame {
             currentModel = LogicModel.ZERO;
         }
 
-        for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
+        for (int i = 0; i < countOfModelsInARowRequiredForWin; ++i) {
             if (field[x][y] != currentModel) {
                 return false;
             }
@@ -146,7 +146,7 @@ public abstract class Game implements IGame {
         return true;
     }
 
-    private boolean checkVerticalWin(int x, int y) {
+    private boolean checkHorizontalWin(int x, int y) {
         if (y + countOfModelsInARowRequiredForWin > field[0].length) {
             return false;
         }
@@ -159,7 +159,7 @@ public abstract class Game implements IGame {
             currentModel = LogicModel.ZERO;
         }
 
-        for (int i = 0; i < countOfModelsInARowRequiredForWin - 1; ++i) {
+        for (int i = 0; i < countOfModelsInARowRequiredForWin; ++i) {
             if (field[x][y] != currentModel) {
                 return false;
             }
