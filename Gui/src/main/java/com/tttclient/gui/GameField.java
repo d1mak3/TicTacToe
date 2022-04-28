@@ -44,13 +44,11 @@ public class GameField extends JFrame {
                     FieldButton newButton = new FieldButton(grid, i, j, this, game);
                     newButton.configureButton();
                     grid.add(newButton.createButton());
-                }
-                else {
+                } else {
                     CellForModel cell;
                     if (field[i][j] == LogicModel.CROSS) {
                         cell = new CellForModel(new Cross());
-                    }
-                    else {
+                    } else {
                         cell = new CellForModel(new Zero());
                     }
                     grid.add(cell);
