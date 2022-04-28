@@ -7,7 +7,7 @@
 
     <groupId>com.tttclient.gamelogic</groupId>
     <artifactId>game-logic</artifactId>
-    <version>0.0</version>
+    <version>0.1</version>
     <packaging>jar</packaging>
     <name>Game Logic</name>
 
