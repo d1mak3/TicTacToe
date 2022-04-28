@@ -6,7 +6,7 @@
 
     <groupId>com.tttclient.loader</groupId>
     <artifactId>loader</artifactId>
-    <version>0.0</version>
+    <version>0.1</version>
     <packaging>jar</packaging>
     <name>Loader</name>
 
