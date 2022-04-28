@@ -1,6 +1,6 @@
 package com.tttclient.gamelogic;
 
-public enum Model {
+public enum LogicModel {
     NULL,
     CROSS,
     ZERO,

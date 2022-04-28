@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.tttclient.gui;
 
 import com.tttclient.drawing.models.Cross;
@@ -45,13 +44,11 @@ public class GameField extends JFrame {
                     FieldButton newButton = new FieldButton(grid, i, j, this, game);
                     newButton.configureButton();
                     grid.add(newButton.createButton());
-                }
-                else {
+                } else {
                     CellForModel cell;
                     if (field[i][j] == LogicModel.CROSS) {
                         cell = new CellForModel(new Cross());
-                    }
-                    else {
+                    } else {
                         cell = new CellForModel(new Zero());
                     }
                     grid.add(cell);
@@ -69,7 +66,4 @@ public class GameField extends JFrame {
     private void configure() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-=======
-package com.tttclient.gui;public class GameField {
->>>>>>> drawing
 }

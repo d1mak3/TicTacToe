@@ -1,2 +1,7 @@
-package com.tttclient.gamelogic;public class Winner {
+package com.tttclient.gamelogic;
+
+public enum Winner {
+    CROSS,
+    ZERO,
+    NOBODY,
 }

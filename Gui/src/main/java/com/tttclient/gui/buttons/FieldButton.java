@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.tttclient.gui.buttons;
 
 import com.tttclient.gamelogic.Winner;
@@ -39,7 +38,4 @@ public class FieldButton extends Button {
             }
         });
     }
-=======
-package com.tttclient.gui.buttons;public class FieldButton {
->>>>>>> drawing
 }

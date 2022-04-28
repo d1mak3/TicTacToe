@@ -1,4 +1,6 @@
-package com.tttclient.gamelogic;
+package com.tttclient.gamelogic.games;
+
+import com.tttclient.gamelogic.LogicModel;
 
 public class GameWithEasyBot extends GameWithBot{
     public GameWithEasyBot(int fieldSize, LogicModel newBotModel) {
