@@ -1,5 +1,7 @@
 package com.tttclient.gui.buttons;
 
+import com.tttclient.gamelogic.LogicModel;
+import com.tttclient.gamelogic.games.GameWithEasyBot;
 import com.tttclient.gamelogic.games.GameWithHuman;
 import com.tttclient.gui.GameController;
 import com.tttclient.gui.GameField;
