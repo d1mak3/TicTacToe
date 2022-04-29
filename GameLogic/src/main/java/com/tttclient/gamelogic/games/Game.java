@@ -35,6 +35,7 @@ public abstract class Game implements IGame {
                 boolean resultRDW = checkReverseDiagonalWin(i, j), resultSDW = checkStraightDiagonalWin(i, j),
                 resultHW = checkHorizontalWin(i, j), resultVW = checkVerticalWin(i, j);
 
+                // Checking for each turn (for game with bot)
                 if (resultHW || resultRDW || resultVW || resultSDW) {
                     if (turnOfCrosses) {
                         winner = Winner.CROSS;
@@ -43,6 +44,23 @@ public abstract class Game implements IGame {
                         winner = Winner.ZERO;
                     }
                 }
+
+                turnOfCrosses = !turnOfCrosses;
+                resultRDW = checkReverseDiagonalWin(i, j);
+                resultSDW = checkStraightDiagonalWin(i, j);
+                resultHW = checkHorizontalWin(i, j);
+                resultVW = checkVerticalWin(i, j);
+
+                if (resultHW || resultRDW || resultVW || resultSDW) {
+                    if (turnOfCrosses) {
+                        winner = Winner.CROSS;
+                    }
+                    else {
+                        winner = Winner.ZERO;
+                    }
+                }
+
+                turnOfCrosses = !turnOfCrosses;
             }
         }
 
