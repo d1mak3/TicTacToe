@@ -6,7 +6,7 @@
 
     <groupId>com.tttclient.main</groupId>
     <artifactId>main</artifactId>
-    <version>0.1</version>
+    <version>1</version>
     <packaging>pom</packaging>
     <name>TicTacToe Client</name>
 

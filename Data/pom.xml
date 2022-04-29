@@ -14,7 +14,7 @@
     <parent>
         <artifactId>main</artifactId>
         <groupId>com.tttclient.main</groupId>
-        <version>0.0</version>
+        <version>1</version>
     </parent>
 
     <properties>

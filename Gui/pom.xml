@@ -6,14 +6,14 @@
 
     <groupId>com.tttclient.gui</groupId>
     <artifactId>gui</artifactId>
-    <version>0.1</version>
+    <version>1</version>
     <packaging>jar</packaging>
     <name>Gui</name>
 
     <parent>
         <artifactId>main</artifactId>
         <groupId>com.tttclient.main</groupId>
-        <version>0.0</version>
+        <version>1</version>
     </parent>
 
     <properties>
@@ -25,12 +25,12 @@
         <dependency>
             <groupId>com.tttclient.gamelogic</groupId>
             <artifactId>game-logic</artifactId>
-            <version>0.0</version>
+            <version>1</version>
         </dependency>
         <dependency>
             <groupId>com.tttclient.drawing</groupId>
             <artifactId>drawing</artifactId>
-            <version>0.0</version>
+            <version>1</version>
         </dependency>
     </dependencies>
 

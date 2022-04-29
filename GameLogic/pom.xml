@@ -7,14 +7,14 @@
 
     <groupId>com.tttclient.gamelogic</groupId>
     <artifactId>game-logic</artifactId>
-    <version>0.1</version>
+    <version>1</version>
     <packaging>jar</packaging>
     <name>Game Logic</name>
 
     <parent>
         <artifactId>main</artifactId>
         <groupId>com.tttclient.main</groupId>
-        <version>0.0</version>
+        <version>1</version>
     </parent>
 
     <properties>
