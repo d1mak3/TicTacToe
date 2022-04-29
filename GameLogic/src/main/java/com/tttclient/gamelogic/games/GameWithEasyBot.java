@@ -13,6 +13,7 @@ public class GameWithEasyBot extends GameWithBot{
             for (int j = 0; j < field[0].length; ++j) {
                 if (field[i][j] == LogicModel.NULL) {
                     field[i][j] = botModel;
+                    return;
                 }
             }
         }
