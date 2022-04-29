@@ -1,17 +1,19 @@
 package com.tttclient.drawing.models;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.io.File;
 
 public class Zero extends Model {
     @Override
     public void draw(Graphics g) {
-        Graphics2D graphics = (Graphics2D) g;
-        graphics.setStroke(new BasicStroke(2));
-        if (widthOfCell > heightOfCell) {
-            graphics.drawOval(0, 0, widthOfCell / 2, widthOfCell / 2);
+        try {
+            Image image = ImageIO.read(new File("./resources/Zero.png"));
+            image = image.getScaledInstance(widthOfCell, heightOfCell, Image.SCALE_SMOOTH);
+            g.drawImage(image, 0, 0, null);
         }
-        else {
-            graphics.drawOval(0, 0, heightOfCell / 2, heightOfCell / 2);
+        catch (Exception e) {
+
         }
     }
 }
