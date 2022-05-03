@@ -1,5 +1,6 @@
 package com.tttclient.gui.buttons;
 
+import com.tttclient.gamelogic.LogicModel;
 import com.tttclient.gamelogic.Winner;
 import com.tttclient.gui.GameController;
 import com.tttclient.gui.GameField;
@@ -7,7 +8,6 @@ import com.tttclient.gui.Menu;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Locale;
 
 public class FieldButton extends Button {
     int x, y;
@@ -32,7 +32,7 @@ public class FieldButton extends Button {
             field.clearField();
             field.drawField();
 
-            Winner winnerOfTheGame = game.checkWin();
+            LogicModel winnerOfTheGame = game.checkWin();
             if (winnerOfTheGame != Winner.NOBODY) {
                 String winnerTitle = winnerOfTheGame.name();
                 winnerTitle = winnerTitle.toLowerCase();
