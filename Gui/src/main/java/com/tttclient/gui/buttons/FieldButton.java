@@ -7,6 +7,7 @@ import com.tttclient.gui.Menu;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Locale;
 
 public class FieldButton extends Button {
     int x, y;
@@ -31,8 +32,13 @@ public class FieldButton extends Button {
             field.clearField();
             field.drawField();
 
-            if (game.checkWin() != Winner.NOBODY) {
-                JOptionPane.showMessageDialog(null, "Finish");
+            Winner winnerOfTheGame = game.checkWin();
+            if (winnerOfTheGame != Winner.NOBODY) {
+                String winnerTitle = winnerOfTheGame.name();
+                winnerTitle = winnerTitle.toLowerCase();
+                winnerTitle = winnerTitle.replace(winnerTitle.charAt(0), winnerTitle.toUpperCase().charAt(0)) + "es";
+
+                JOptionPane.showMessageDialog(null, winnerTitle + " have won");
                 Menu.configureMenu();
                 field.dispose();
             }
