@@ -13,16 +13,11 @@ public abstract class GameWithBot extends Game {
 
     @Override
     public void place(int x, int y) {
-        if (botModel == LogicModel.CROSS) {
-            turnOfCrosses = false;
-        }
-        else {
-            turnOfCrosses = true;
-        }
+        turnOfCrosses = botModel != LogicModel.CROSS;
 
         placeModel(x, y);
 
-        if (checkWin() != Winner.NOBODY) {
+        if (checkWin() != LogicModel.NULL) {
             return;
         }
 
