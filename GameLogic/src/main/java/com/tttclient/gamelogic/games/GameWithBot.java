@@ -1,7 +1,6 @@
 package com.tttclient.gamelogic.games;
 
 import com.tttclient.gamelogic.LogicModel;
-import com.tttclient.gamelogic.Winner;
 
 public abstract class GameWithBot extends Game {
     LogicModel botModel;

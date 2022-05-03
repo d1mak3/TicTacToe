@@ -1,6 +1,5 @@
 package com.tttclient.gui.buttons;
 
-import com.tttclient.gamelogic.Winner;
 import com.tttclient.gui.GameController;
 import com.tttclient.gui.GameField;
 import com.tttclient.gui.Menu;

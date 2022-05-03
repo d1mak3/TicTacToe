@@ -2,7 +2,6 @@ package com.tttclient.gui;
 
 import com.tttclient.gamelogic.IGame;
 import com.tttclient.gamelogic.LogicModel;
-import com.tttclient.gamelogic.Winner;
 
 public class GameController {
     IGame game;
