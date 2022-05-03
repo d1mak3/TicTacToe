@@ -15,8 +15,8 @@ public class GameField extends JFrame {
     JPanel grid = new JPanel();
 
     public GameField(int fieldSize, GameController newGame) {
-        field = new LogicModel[fieldSize][fieldSize];
         game = newGame;
+        field = new LogicModel[fieldSize][fieldSize];
         grid.setLayout(new GridLayout(fieldSize, fieldSize, 1, 1));
 
         configure();
@@ -41,7 +41,7 @@ public class GameField extends JFrame {
         for (int i = 0; i < fieldSize; ++i) {
             for (int j = 0; j < fieldSize; ++j) {
                 if (field[i][j] == LogicModel.NULL) {
-                    FieldButton newButton = new FieldButton(grid, i, j, this, game);
+                    FieldButton newButton = new FieldButton(grid, i, j, game, this);
                     newButton.configureButton();
                     grid.add(newButton.createButton());
                 } else {
@@ -57,6 +57,12 @@ public class GameField extends JFrame {
         }
 
         add(grid);
+    }
+
+    public void resetField(LogicModel[][] newField) {
+        setField(newField);
+        clearField();
+        drawField();
     }
 
     public void clearField() {
