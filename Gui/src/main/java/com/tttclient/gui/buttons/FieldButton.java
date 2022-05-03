@@ -1,5 +1,6 @@
 package com.tttclient.gui.buttons;
 
+import com.tttclient.gamelogic.LogicModel;
 import com.tttclient.gui.GameController;
 import com.tttclient.gui.GameField;
 import com.tttclient.gui.Menu;
@@ -30,8 +31,13 @@ public class FieldButton extends Button {
             field.clearField();
             field.drawField();
 
-            if (game.checkWin() != Winner.NOBODY) {
-                JOptionPane.showMessageDialog(null, "Finish");
+            LogicModel winnerOfTheGame = game.checkWin();
+            if (winnerOfTheGame != LogicModel.NULL) {
+                String winnerTitle = winnerOfTheGame.name();
+                winnerTitle = winnerTitle.toLowerCase();
+                winnerTitle = winnerTitle.replace(winnerTitle.charAt(0), winnerTitle.toUpperCase().charAt(0)) + "es";
+
+                JOptionPane.showMessageDialog(null, winnerTitle + " have won");
                 Menu.configureMenu();
                 field.dispose();
             }

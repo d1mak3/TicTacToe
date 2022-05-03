@@ -17,7 +17,7 @@ public class GameController {
         return game.getField();
     }
 
-    public Winner checkWin() {
+    public LogicModel checkWin() {
         return game.checkWin();
     }
 }
