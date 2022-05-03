@@ -27,8 +27,8 @@ public abstract class Game implements IGame {
     }
 
     @Override
-    public Winner checkWin() {
-        Winner winner = Winner.NOBODY;
+    public LogicModel checkWin() {
+        LogicModel winner = LogicModel.NULL;
 
         for (int i = 0; i < field[0].length; ++i) {
             for (int j = 0; j < field[0].length; ++j) {
@@ -37,12 +37,7 @@ public abstract class Game implements IGame {
 
                 // Checking for each turn (for game with bot)
                 if (resultHW || resultRDW || resultVW || resultSDW) {
-                    if (turnOfCrosses) {
-                        winner = Winner.CROSS;
-                    }
-                    else {
-                        winner = Winner.ZERO;
-                    }
+                    winner = selectModel();
                 }
 
                 turnOfCrosses = !turnOfCrosses;
@@ -52,12 +47,7 @@ public abstract class Game implements IGame {
                 resultVW = checkVerticalWin(i, j);
 
                 if (resultHW || resultRDW || resultVW || resultSDW) {
-                    if (turnOfCrosses) {
-                        winner = Winner.CROSS;
-                    }
-                    else {
-                        winner = Winner.ZERO;
-                    }
+                    winner = selectModel();
                 }
 
                 turnOfCrosses = !turnOfCrosses;
