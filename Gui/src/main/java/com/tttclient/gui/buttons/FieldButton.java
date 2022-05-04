@@ -13,12 +13,12 @@ public class FieldButton extends Button {
     GameController game;
     GameField field;
 
-    public FieldButton(Container newParent, int newX, int newY, GameField newField, GameController gameController) {
+    public FieldButton(Container newParent, int newX, int newY, GameController newGame, GameField newField) {
         super(newParent);
         x = newX;
         y = newY;
         button = new JButton();
-        game = gameController;
+        game = newGame;
         field = newField;
     }
 
@@ -27,17 +27,10 @@ public class FieldButton extends Button {
         button.setBorder(BorderFactory.createLineBorder(Color.black));
 
         button.addActionListener(listener -> {
-            field.setField(game.place(x, y));
-            field.clearField();
-            field.drawField();
+            game.place(x, y);
+            field.resetField(game.getField());
 
-            LogicModel winnerOfTheGame = game.checkWin();
-            if (winnerOfTheGame != LogicModel.NULL) {
-                String winnerTitle = winnerOfTheGame.name();
-                winnerTitle = winnerTitle.toLowerCase();
-                winnerTitle = winnerTitle.replace(winnerTitle.charAt(0), winnerTitle.toUpperCase().charAt(0)) + "es";
-
-                JOptionPane.showMessageDialog(null, winnerTitle + " have won");
+            if (game.checkWin() != LogicModel.NULL) {
                 Menu.configureMenu();
                 field.dispose();
             }
