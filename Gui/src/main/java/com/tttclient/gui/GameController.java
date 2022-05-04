@@ -32,6 +32,27 @@ public class GameController {
             JOptionPane.showMessageDialog(null, winnerTitle + " have won");
         }
 
+        if (checkDraw()) {
+            winnerOfTheGame = LogicModel.ZERO; // The winner doesn't matter in usage of this method. It just has to be not NULL
+            JOptionPane.showMessageDialog(null, "Draw");
+        }
+
         return winnerOfTheGame;
+    }
+
+    private boolean checkDraw() {
+        LogicModel[][] field = getField();
+        int counter = 0;
+        int fieldSize = field[0].length;
+
+        for (int i = 0; i < fieldSize; ++i) {
+            for (int j = 0; j < fieldSize; ++j) {
+                if (field[i][j] != LogicModel.NULL) {
+                    ++counter;
+                }
+            }
+        }
+
+        return counter == fieldSize * fieldSize;
     }
 }
