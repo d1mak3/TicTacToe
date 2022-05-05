@@ -6,5 +6,5 @@ import java.io.Serializable;
 
 public class GameData implements Serializable {
     public IGame game;
-    public boolean turnOfCrosses;
+    public Class<IGame> gameType;
 }
