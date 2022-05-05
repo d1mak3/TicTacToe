@@ -27,6 +27,7 @@ public class NewGameWithBotButton extends Button {
             List<IButton> buttons = new ArrayList<>();
 
             buttons.add(new NewGameWithEasyBotButton(parent));
+            buttons.add(new NewGameWithMediumBotButton(parent));
 
             Menu.clearFrame(parent);
 

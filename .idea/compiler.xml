@@ -10,6 +10,7 @@
         <module name="gui" />
         <module name="Data" />
         <module name="GameLogic" />
+        <module name="data" />
         <module name="loader" />
       </profile>
     </annotationProcessing>
