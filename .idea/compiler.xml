@@ -10,10 +10,12 @@
         <module name="gui" />
         <module name="Data" />
         <module name="GameLogic" />
+        <module name="data" />
         <module name="loader" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Data" target="17" />
       <module name="GameAPI" target="17" />
     </bytecodeTargetLevel>
   </component>
