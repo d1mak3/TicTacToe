@@ -5,6 +5,7 @@ import com.tttclient.drawing.models.Zero;
 import com.tttclient.gamelogic.LogicModel;
 
 import com.tttclient.gui.buttons.FieldButton;
+import com.tttclient.gui.controllers.GameController;
 
 import javax.swing.*;
 import java.awt.*;

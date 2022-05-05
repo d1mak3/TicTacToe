@@ -1,4 +1,4 @@
-package com.tttclient.gui;
+package com.tttclient.gui.controllers;
 
 import com.tttclient.gamelogic.IGame;
 import com.tttclient.gamelogic.LogicModel;
