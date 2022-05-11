@@ -27,7 +27,7 @@ public class Menu {
         JPanel grid = new JPanel();
         List<IButton> buttons = new ArrayList<>();
 
-        buttons.add(new NewGameButton(menuFrame.getContentPane())); // TODO: Rework buttons to use MenuFrame instead of grid and set new grid all the time
+        buttons.add(new NewGameButton(menuFrame.getContentPane()));
         buttons.add(new ContinueGameButton(menuFrame.getContentPane()));
 
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
