@@ -6,7 +6,7 @@ import com.tttclient.gamelogic.LogicModel;
 import javax.swing.*;
 
 public class GameController {
-    IGame game;
+    private final IGame game;
 //    int countOfModelsInARowRequiredForWin = 3;
 
     public GameController(IGame newGame) {
@@ -38,6 +38,10 @@ public class GameController {
         }
 
         return winnerOfTheGame;
+    }
+
+    public IGame getGame() {
+        return game;
     }
 
     private boolean checkDraw() {

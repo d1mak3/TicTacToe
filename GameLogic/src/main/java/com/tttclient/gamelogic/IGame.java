@@ -1,6 +1,8 @@
 package com.tttclient.gamelogic;
 
-public interface IGame {
+import java.io.Serializable;
+
+public interface IGame extends Serializable {
     void place(int x, int y);
     LogicModel checkWin();
     void setWinCondition(int countOfModelsInARow);

@@ -1,34 +1,29 @@
 package com.tttclient.gui;
 
+import com.tttclient.data.savers.FileDataSaver;
 import com.tttclient.drawing.models.Cross;
 import com.tttclient.drawing.models.Zero;
 import com.tttclient.gamelogic.LogicModel;
 
 import com.tttclient.gui.buttons.FieldButton;
 import com.tttclient.gui.controllers.GameController;
+import com.tttclient.gui.controllers.SaveController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GameField extends JFrame {
     LogicModel[][] field;
-    GameController game;
+    GameController gameController;
     JPanel grid = new JPanel();
 
-    public GameField(int fieldSize, GameController newGame) {
-        game = newGame;
-        field = new LogicModel[fieldSize][fieldSize];
+    public GameField(int fieldSize, GameController newGameController) {
+        gameController = newGameController;
+        field = gameController.getField();
         grid.setLayout(new GridLayout(fieldSize, fieldSize, 1, 1));
-
         configure();
-
-        // Fill the field with NULLs
-        for (int i = 0; i < fieldSize; ++i) {
-            for (int j = 0; j < fieldSize; ++j) {
-                field[i][j] = LogicModel.NULL;
-            }
-        }
-
         drawField();
     }
 
@@ -42,10 +37,11 @@ public class GameField extends JFrame {
         for (int i = 0; i < fieldSize; ++i) {
             for (int j = 0; j < fieldSize; ++j) {
                 if (field[i][j] == LogicModel.NULL) {
-                    FieldButton newButton = new FieldButton(grid, i, j, game, this);
+                    FieldButton newButton = new FieldButton(grid, i, j, gameController, this);
                     newButton.configureButton();
                     grid.add(newButton.createButton());
-                } else {
+                }
+                else {
                     CellForModel cell;
                     if (field[i][j] == LogicModel.CROSS) {
                         cell = new CellForModel(new Cross());
@@ -71,6 +67,18 @@ public class GameField extends JFrame {
     }
 
     private void configure() {
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+
+                SaveController saveController = new SaveController(new FileDataSaver());
+                saveController.save(gameController.getGame());
+
+                Menu.getMenuFrame().setVisible(true);
+            }
+        });
     }
 }

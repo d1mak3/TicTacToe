@@ -1,5 +1,6 @@
 package com.tttclient.gui;
 
+import com.tttclient.gui.buttons.ContinueGameButton;
 import com.tttclient.gui.buttons.NewGameButton;
 
 import javax.swing.*;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
-    static JFrame menuFrame;
+    private static JFrame menuFrame;
 
     public static void clearFrame(Container container) {
         // Clear the container
@@ -26,7 +27,8 @@ public class Menu {
         JPanel grid = new JPanel();
         List<IButton> buttons = new ArrayList<>();
 
-        buttons.add(new NewGameButton(grid));
+        buttons.add(new NewGameButton(menuFrame.getContentPane())); // TODO: Rework buttons to use MenuFrame instead of grid and set new grid all the time
+        buttons.add(new ContinueGameButton(menuFrame.getContentPane()));
 
         menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GridLayout gridLayout = new GridLayout(buttons.size(), 1);
