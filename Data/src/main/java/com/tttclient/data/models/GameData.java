@@ -6,5 +6,4 @@ import java.io.Serializable;
 
 public class GameData implements Serializable {
     public IGame game;
-    public Class<? extends IGame> gameType;
 }

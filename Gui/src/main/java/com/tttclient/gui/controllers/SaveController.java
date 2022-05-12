@@ -14,7 +14,6 @@ public class SaveController {
     public void save(IGame game) {
         GameData gameToSave = new GameData();
         gameToSave.game = game;
-        gameToSave.gameType = game.getClass();
 
         saver.save(gameToSave);
     }
