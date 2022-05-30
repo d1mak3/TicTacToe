@@ -5,9 +5,9 @@ import com.tttclient.gamelogic.LogicModel;
 
 
 public abstract class Game implements IGame {
-    LogicModel[][] field;
-    boolean turnOfCrosses = false;
-    int countOfModelsInARowRequiredForWin;
+    protected LogicModel[][] field;
+    protected boolean turnOfCrosses = false;
+    protected int countOfModelsInARowRequiredForWin;
 
     public Game(int fieldSize) {
         field = new LogicModel[fieldSize][fieldSize];

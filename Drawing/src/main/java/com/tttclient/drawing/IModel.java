@@ -4,6 +4,6 @@ import java.awt.*;
 
 public interface IModel {
     void draw(Graphics g);
-    public void setHeightOfCell(int newHeightOfCell);
-    public void setWidthOfCell(int newWidthOfCell);
+    void setHeightOfCell(int newHeightOfCell);
+    void setWidthOfCell(int newWidthOfCell);
 }

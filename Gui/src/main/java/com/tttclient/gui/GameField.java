@@ -15,9 +15,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class GameField extends JFrame {
-    LogicModel[][] field;
-    GameController gameController;
-    JPanel grid = new JPanel();
+    private LogicModel[][] field;
+    private final GameController gameController;
+    private final JPanel grid = new JPanel();
 
     public GameField(int fieldSize, GameController newGameController) {
         gameController = newGameController;

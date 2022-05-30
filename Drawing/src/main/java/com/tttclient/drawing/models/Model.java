@@ -3,7 +3,7 @@ package com.tttclient.drawing.models;
 import com.tttclient.drawing.IModel;
 
 public abstract class Model implements IModel {
-    int heightOfCell, widthOfCell;
+    protected int heightOfCell, widthOfCell;
 
     public void setHeightOfCell(int newHeightOfCell) {
         heightOfCell = newHeightOfCell;

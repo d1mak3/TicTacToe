@@ -9,9 +9,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FieldButton extends Button {
-    int x, y;
-    GameController game;
-    GameField field;
+    private final int x, y;
+    private final GameController game;
+    private final GameField field;
 
     public FieldButton(Container newParent, int newX, int newY, GameController newGame, GameField newField) {
         super(newParent);

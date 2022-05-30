@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CellForModel extends JPanel {
-    IModel model;
+    private final IModel model;
 
     public CellForModel(IModel newModel) {
         model = newModel;
