@@ -33,18 +33,13 @@ public class NewGameWithBotButton extends Button {
             Menu.clearFrame(parent);
 
             JPanel grid = new JPanel();
-            GridLayout gridLayout = new GridLayout(buttons.size() + 1, 0);
+            GridLayout gridLayout = new GridLayout(buttons.size(), 0);
             grid.setLayout(gridLayout);
 
             for (IButton button : buttons) {
                 button.configureButton();
                 grid.add(button.createButton());
             }
-
-            JLabel announcementLabel = new JLabel("More bots are in development");
-            announcementLabel.setFont(new Font("Arial", Font.PLAIN, 75));
-            announcementLabel.setHorizontalAlignment(SwingConstants.CENTER);
-            grid.add(announcementLabel);
 
             parent.add(grid);
         });
