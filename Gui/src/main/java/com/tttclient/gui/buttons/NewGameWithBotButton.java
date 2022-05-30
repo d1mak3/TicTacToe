@@ -28,6 +28,7 @@ public class NewGameWithBotButton extends Button {
 
             buttons.add(new NewGameWithEasyBotButton(parent));
             buttons.add(new NewGameWithMediumBotButton(parent));
+            buttons.add(new NewGameWithHardBotButton(parent));
 
             Menu.clearFrame(parent);
 
