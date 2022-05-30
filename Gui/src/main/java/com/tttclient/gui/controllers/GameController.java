@@ -24,12 +24,15 @@ public class GameController {
 
     public LogicModel checkWin() {
         LogicModel winnerOfTheGame = game.checkWin();
+
         if (winnerOfTheGame != LogicModel.NULL) {
             String winnerTitle = winnerOfTheGame.name();
             winnerTitle = winnerTitle.toLowerCase();
             winnerTitle = winnerTitle.replace(winnerTitle.charAt(0), winnerTitle.toUpperCase().charAt(0)) + "es";
 
             JOptionPane.showMessageDialog(null, winnerTitle + " have won");
+
+            return winnerOfTheGame;
         }
 
         if (checkDraw()) {
