@@ -3,8 +3,8 @@ package com.tttclient.gamelogic.games;
 import com.tttclient.gamelogic.LogicModel;
 
 public class GameWithEasyBot extends GameWithBot{
-    public GameWithEasyBot(int fieldSize, LogicModel newBotModel) {
-        super(fieldSize, newBotModel);
+    public GameWithEasyBot(int fieldSize, LogicModel newBotModel, boolean botTurn) {
+        super(fieldSize, newBotModel, botTurn);
     }
 
     @Override

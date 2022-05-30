@@ -32,7 +32,7 @@ public class NewGameWithMediumBotButton extends Button {
             }
 
             GameField field = new GameField(3,
-                    new GameController(new GameWithMediumBot(3, botModel)));
+                    new GameController(new GameWithMediumBot(3, botModel, true)));
             field.setVisible(true);
             field.setSize(1200, 600);
             Menu.getMenuFrame().setVisible(false);
